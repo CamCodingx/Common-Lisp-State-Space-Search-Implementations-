@@ -1,4 +1,5 @@
 # Common-Lisp-State-Space-Search-Implementations-
+
 GENERAL-SEARCH, GOAL-P,BFS-ENQUEUER,DFS-ENQUEUER ,MANHATTAN-ENQUEUER,NUM-OUT-ENQUEUER implementations
 
 The puzzle represented is a simple-vector of 10 integers, 0-8 of which are tiles and 9 is the blank index. A state chain is (puzzle. previous-states), so depth is just the length of the chain minus 1. General-search is generic and doesn't know about the puzzles or heuristics, it just
