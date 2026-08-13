@@ -1,5 +1,6 @@
 # Common-Lisp-State-Space-Search-Implementations-
 GENERAL-SEARCH, GOAL-P,BFS-ENQUEUER,DFS-ENQUEUER ,MANHATTAN-ENQUEUER,NUM-OUT-ENQUEUER implementations
+
 The puzzle represented is a simple-vector of 10 integers, 0-8 of which are tiles and 9 is the blank index. A state chain is (puzzle. previous-states), so depth is just the length of the chain minus 1. General-search is generic and doesn't know about the puzzles or heuristics, it just
 removes a state from the queue, tests goal-p, then it generates successors with successors-of. The implementation makes an open priority queue, and on each loop it checks if the queue is empty, respects max iterations, and pop the best state with queue-front. History prevents revisits. Essentially, the behaviour is controlled by the enqueue function (BFS, DFS, A*). This allows the algorithm to remain flexible and the same search loop can perform uninformed search, heuristic search, or custom search orders by changing the enqueueing function. This allows us to plug in new heuristics without changing the initial search function.
 
